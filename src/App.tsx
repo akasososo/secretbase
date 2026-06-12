@@ -300,6 +300,30 @@ export default function App() {
                       </motion.li>
                     ))}
                   </ul>
+
+                  {/* AI CTA Button */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="text-center pt-8"
+                  >
+                    
+                      href="https://daddys-himitsu-kichi-ai.pages.dev/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 bg-primary-container/20 hover:bg-primary-container/40 border border-primary/30 hover:border-primary/60 text-primary px-8 py-4 rounded-full font-serif text-sm font-bold tracking-wide transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(255,191,0,0.1)] hover:shadow-[0_0_40px_rgba(255,191,0,0.25)]"
+                    >
+                      <Flame className="w-4 h-4" />
+                      まず、島のパパAIに吐き出してみる
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                    <p className="mt-3 text-xs text-on-surface-variant/50 font-serif italic">
+                      24時間、一人で抱えなくていい。
+                    </p>
+                  </motion.div>
+
                 </div>
               </section>
 
