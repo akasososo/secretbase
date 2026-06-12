@@ -27,7 +27,6 @@ export default function App() {
   const [hasEntered, setHasEntered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Trigger scroll effects
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -38,7 +37,6 @@ export default function App() {
 
   const handleEnter = () => {
     setHasEntered(true);
-    // Scroll to top on transition
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'instant' });
     }, 100);
@@ -46,10 +44,8 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-[#0a0e14] selection:bg-primary-container selection:text-on-primary">
-      {/* Background Ambience */}
       <AmbientBackdrop />
 
-      {/* Atmospheric Entry Flow */}
       <AnimatePresence mode="wait">
         {!hasEntered ? (
           <motion.div
@@ -68,7 +64,6 @@ export default function App() {
             transition={{ duration: 1.2, ease: 'easeOut' }}
             className="relative"
           >
-            {/* Header: TopNavBar */}
             <header
               className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 w-full ${
                 isScrolled
@@ -115,13 +110,9 @@ export default function App() {
               </div>
             </header>
 
-            {/* Main space */}
             <main className="relative z-10 pt-20">
-              {/* Hero Presentation Section */}
               <section id="top-hero" className="min-h-screen flex flex-col items-center justify-center pt-20 pb-20 px-6 text-center relative">
                 <div className="max-w-3xl w-full space-y-10">
-                  
-                  {/* Central Lantern with beautiful pulsing glow */}
                   <div className="flex justify-center max-w-full">
                     <motion.div
                       animate={{
@@ -148,7 +139,6 @@ export default function App() {
                     </motion.div>
                   </div>
 
-                  {/* Headlines and Titles */}
                   <div className="space-y-6">
                     <motion.h1
                       initial={{ opacity: 0, y: 20 }}
@@ -180,7 +170,6 @@ export default function App() {
                     </motion.p>
                   </div>
 
-                  {/* Mini statistics banner */}
                   <motion.div
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -198,25 +187,20 @@ export default function App() {
                   </motion.div>
                 </div>
 
-                {/* Ambient Downward Arrow Indicator */}
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-40 animate-bounce cursor-pointer"
                      onClick={() => document.getElementById('details-section')?.scrollIntoView({ behavior: 'smooth' })}>
                   <div className="w-5 h-5 border-b-2 border-r-2 border-primary rotate-45" />
                 </div>
               </section>
 
-              {/* Detail Section */}
               <section id="details-section" className="py-24 px-6 glass-surface wabi-sabi-border relative">
                 <div className="max-w-xl mx-auto space-y-12">
-                  
-                  {/* Quick features list */}
                   <div className="space-y-8 text-center md:text-left">
                     <span className="font-serif text-sm text-primary tracking-[0.3em] block text-center">SACRED SPACE OUTLINE</span>
                     <h3 className="font-serif text-2xl sm:text-3xl text-on-surface font-semibold mb-6 text-center">
                       宮古島の穏やかな朝に、灯る場所
                     </h3>
 
-                    {/* Details Rows */}
                     <div className="space-y-6">
                       <div className="flex items-start gap-4 justify-start text-left">
                         <div className="p-2.5 rounded bg-primary-container/10 border border-primary/20 text-primary shrink-0">
@@ -261,11 +245,9 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-
                 </div>
               </section>
 
-              {/* Target Audience Section */}
               <section className="py-32 px-6">
                 <div className="max-w-3xl mx-auto space-y-16">
                   <div className="text-center space-y-3">
@@ -306,9 +288,9 @@ export default function App() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-center pt-8"
+                    className="text-center pt-4"
                   >
-                    
+                    <a
                       href="https://daddys-himitsu-kichi-ai.pages.dev/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -326,7 +308,6 @@ export default function App() {
                 </div>
               </section>
 
-              {/* Minimal Line CTA Section */}
               <section id="line-cta-section" className="py-24 bg-transparent text-center px-6 relative">
                 <div className="max-w-2xl mx-auto space-y-8">
                   <p className="font-serif text-lg sm:text-xl text-on-surface leading-loose italic">
@@ -351,7 +332,6 @@ export default function App() {
               </section>
             </main>
 
-            {/* Footer */}
             <footer className="bg-surface-bright/5 backdrop-blur-xl relative overflow-hidden flex flex-col items-center justify-center w-full py-16 px-6 text-center rounded-t-[4rem] sm:rounded-t-[5rem] shadow-[0_-20px_60px_rgba(10,14,20,0.8)] border-t border-outline-variant/20">
               <div
                 className="font-brand text-2xl sm:text-3xl text-primary mb-6 scale-105 transition-transform duration-500 font-bold tracking-widest cursor-pointer"
